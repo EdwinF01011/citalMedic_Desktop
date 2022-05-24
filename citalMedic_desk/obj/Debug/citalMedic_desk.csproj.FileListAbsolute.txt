@@ -1,0 +1,17 @@
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\citalMedic_desk.exe.config
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\citalMedic_desk.exe
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\citalMedic_desk.pdb
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\EntityFramework.dll
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\EntityFramework.SqlServer.dll
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\EntityFramework.xml
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\bin\Debug\EntityFramework.SqlServer.xml
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.csproj.AssemblyReference.cache
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.Properties.Resources.resources
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.vista.FrmMenu.resources
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.csproj.GenerateResource.cache
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.csproj.CoreCompileInputs.cache
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.csproj.CopyComplete
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.exe
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.pdb
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.vista.FrmPaciente.resources
+C:\sisteco\citalMedic_Desktop\citalMedic_desk\obj\Debug\citalMedic_desk.vista.FrmMedico.resources
