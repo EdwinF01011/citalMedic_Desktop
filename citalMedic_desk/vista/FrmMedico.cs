@@ -16,5 +16,7 @@ namespace citalMedic_desk.vista
         {
             InitializeComponent();
         }
+
+
     }
 }

@@ -7,7 +7,7 @@
     <Property Name="id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fecha_creacion" Type="date" />
     <Property Name="fecha_cita" Type="date" />
-    <Property Name="hora_cita" Type="date" />
+    <Property Name="hora_cita" Type="time" Precision="7" />
     <Property Name="id_medico" Type="int" />
     <Property Name="id_paciente" Type="int" />
   </EntityType>
@@ -24,11 +24,11 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="apellido" Type="varchar" MaxLength="20" />
     <Property Name="id_documento" Type="tinyint" />
     <Property Name="numero_doc" Type="varchar" MaxLength="10" />
     <Property Name="correo" Type="varchar" MaxLength="40" />
     <Property Name="especialidad" Type="varchar" MaxLength="20" />
-    <Property Name="apellido" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="paciente">
     <Key>
@@ -37,14 +37,14 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="20" />
     <Property Name="apellido" Type="varchar" MaxLength="20" />
+    <Property Name="id_documento" Type="tinyint" />
     <Property Name="numero_doc" Type="varchar" MaxLength="10" />
     <Property Name="fecha_natal" Type="date" />
     <Property Name="correo" Type="varchar" MaxLength="40" />
     <Property Name="direccion" Type="varchar" MaxLength="40" />
     <Property Name="ciudad" Type="varchar" MaxLength="20" />
-    <Property Name="id_documento" Type="tinyint" />
   </EntityType>
-  <Association Name="FK__cita__id_medico__3E52440B">
+  <Association Name="FK__cita__id_medico__123EB7A3">
     <End Role="medico" Type="Self.medico" Multiplicity="0..1" />
     <End Role="cita" Type="Self.cita" Multiplicity="*" />
     <ReferentialConstraint>
@@ -56,7 +56,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cita__id_pacient__3F466844">
+  <Association Name="FK__cita__id_pacient__1332DBDC">
     <End Role="paciente" Type="Self.paciente" Multiplicity="0..1" />
     <End Role="cita" Type="Self.cita" Multiplicity="*" />
     <ReferentialConstraint>
@@ -68,7 +68,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__medico__apellido__38996AB5">
+  <Association Name="FK__medico__id_docum__08B54D69">
     <End Role="documento" Type="Self.documento" Multiplicity="0..1" />
     <End Role="medico" Type="Self.medico" Multiplicity="*" />
     <ReferentialConstraint>
@@ -80,7 +80,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__paciente__id_doc__3B75D760">
+  <Association Name="FK__paciente__id_doc__0B91BA14">
     <End Role="documento" Type="Self.documento" Multiplicity="0..1" />
     <End Role="paciente" Type="Self.paciente" Multiplicity="*" />
     <ReferentialConstraint>
@@ -117,6 +117,31 @@
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_insertCita" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecha_creacion" Type="date" Mode="In" />
+    <Parameter Name="fecha_cita" Type="date" Mode="In" />
+    <Parameter Name="hora_cita" Type="time" Mode="In" />
+    <Parameter Name="id_medico" Type="int" Mode="In" />
+    <Parameter Name="id_paciente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_insertMedic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="apellido" Type="varchar" Mode="In" />
+    <Parameter Name="id_documento" Type="tinyint" Mode="In" />
+    <Parameter Name="numero_doc" Type="varchar" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="especialidad" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_insertPaciente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="apellido" Type="varchar" Mode="In" />
+    <Parameter Name="id_documento" Type="tinyint" Mode="In" />
+    <Parameter Name="numero_doc" Type="varchar" Mode="In" />
+    <Parameter Name="fecha_natal" Type="date" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="direccion" Type="varchar" Mode="In" />
+    <Parameter Name="ciudad" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -128,19 +153,19 @@
     <EntitySet Name="documento" EntityType="Self.documento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="medico" EntityType="Self.medico" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="paciente" EntityType="Self.paciente" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__cita__id_medico__3E52440B" Association="Self.FK__cita__id_medico__3E52440B">
+    <AssociationSet Name="FK__cita__id_medico__123EB7A3" Association="Self.FK__cita__id_medico__123EB7A3">
       <End Role="medico" EntitySet="medico" />
       <End Role="cita" EntitySet="cita" />
     </AssociationSet>
-    <AssociationSet Name="FK__cita__id_pacient__3F466844" Association="Self.FK__cita__id_pacient__3F466844">
+    <AssociationSet Name="FK__cita__id_pacient__1332DBDC" Association="Self.FK__cita__id_pacient__1332DBDC">
       <End Role="paciente" EntitySet="paciente" />
       <End Role="cita" EntitySet="cita" />
     </AssociationSet>
-    <AssociationSet Name="FK__medico__apellido__38996AB5" Association="Self.FK__medico__apellido__38996AB5">
+    <AssociationSet Name="FK__medico__id_docum__08B54D69" Association="Self.FK__medico__id_docum__08B54D69">
       <End Role="documento" EntitySet="documento" />
       <End Role="medico" EntitySet="medico" />
     </AssociationSet>
-    <AssociationSet Name="FK__paciente__id_doc__3B75D760" Association="Self.FK__paciente__id_doc__3B75D760">
+    <AssociationSet Name="FK__paciente__id_doc__0B91BA14" Association="Self.FK__paciente__id_doc__0B91BA14">
       <End Role="documento" EntitySet="documento" />
       <End Role="paciente" EntitySet="paciente" />
     </AssociationSet>

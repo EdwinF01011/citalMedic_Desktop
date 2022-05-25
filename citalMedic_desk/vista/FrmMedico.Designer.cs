@@ -32,21 +32,19 @@ namespace citalMedic_desk.vista
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_medic = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNumberDoc_m = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEspecialidad_medic = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCorreoM = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellidoM = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNameM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar_medic = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -77,13 +75,13 @@ namespace citalMedic_desk.vista
             this.label10.TabIndex = 47;
             this.label10.Text = "####";
             // 
-            // comboBox1
+            // cbx_medic
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(375, 295);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 28);
-            this.comboBox1.TabIndex = 46;
+            this.cbx_medic.FormattingEnabled = true;
+            this.cbx_medic.Location = new System.Drawing.Point(375, 295);
+            this.cbx_medic.Name = "cbx_medic";
+            this.cbx_medic.Size = new System.Drawing.Size(125, 28);
+            this.cbx_medic.TabIndex = 46;
             // 
             // label9
             // 
@@ -94,12 +92,12 @@ namespace citalMedic_desk.vista
             this.label9.TabIndex = 45;
             this.label9.Text = "Tipo";
             // 
-            // textBox6
+            // txtNumberDoc_m
             // 
-            this.textBox6.Location = new System.Drawing.Point(44, 297);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(269, 26);
-            this.textBox6.TabIndex = 44;
+            this.txtNumberDoc_m.Location = new System.Drawing.Point(44, 297);
+            this.txtNumberDoc_m.Name = "txtNumberDoc_m";
+            this.txtNumberDoc_m.Size = new System.Drawing.Size(269, 26);
+            this.txtNumberDoc_m.TabIndex = 44;
             // 
             // label8
             // 
@@ -110,44 +108,28 @@ namespace citalMedic_desk.vista
             this.label8.TabIndex = 43;
             this.label8.Text = "N° documento";
             // 
-            // textBox5
+            // txtEspecialidad_medic
             // 
-            this.textBox5.Location = new System.Drawing.Point(44, 511);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(269, 26);
-            this.textBox5.TabIndex = 42;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 488);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 20);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Ciudad";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(44, 439);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 26);
-            this.textBox4.TabIndex = 40;
+            this.txtEspecialidad_medic.Location = new System.Drawing.Point(44, 439);
+            this.txtEspecialidad_medic.Name = "txtEspecialidad_medic";
+            this.txtEspecialidad_medic.Size = new System.Drawing.Size(269, 26);
+            this.txtEspecialidad_medic.TabIndex = 40;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(40, 416);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 39;
-            this.label5.Text = "Dirección";
+            this.label5.Text = "Especialidad";
             // 
-            // textBox3
+            // txtCorreoM
             // 
-            this.textBox3.Location = new System.Drawing.Point(44, 368);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 26);
-            this.textBox3.TabIndex = 38;
+            this.txtCorreoM.Location = new System.Drawing.Point(44, 368);
+            this.txtCorreoM.Name = "txtCorreoM";
+            this.txtCorreoM.Size = new System.Drawing.Size(269, 26);
+            this.txtCorreoM.TabIndex = 38;
             // 
             // label4
             // 
@@ -158,12 +140,12 @@ namespace citalMedic_desk.vista
             this.label4.TabIndex = 37;
             this.label4.Text = "Correo";
             // 
-            // textBox2
+            // txtApellidoM
             // 
-            this.textBox2.Location = new System.Drawing.Point(44, 225);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 26);
-            this.textBox2.TabIndex = 36;
+            this.txtApellidoM.Location = new System.Drawing.Point(44, 225);
+            this.txtApellidoM.Name = "txtApellidoM";
+            this.txtApellidoM.Size = new System.Drawing.Size(269, 26);
+            this.txtApellidoM.TabIndex = 36;
             // 
             // label3
             // 
@@ -174,12 +156,12 @@ namespace citalMedic_desk.vista
             this.label3.TabIndex = 35;
             this.label3.Text = "Apellido";
             // 
-            // textBox1
+            // txtNameM
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 161);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 26);
-            this.textBox1.TabIndex = 34;
+            this.txtNameM.Location = new System.Drawing.Point(44, 161);
+            this.txtNameM.Name = "txtNameM";
+            this.txtNameM.Size = new System.Drawing.Size(269, 26);
+            this.txtNameM.TabIndex = 34;
             // 
             // label2
             // 
@@ -190,35 +172,33 @@ namespace citalMedic_desk.vista
             this.label2.TabIndex = 33;
             this.label2.Text = "Nombre";
             // 
-            // button1
+            // btnGuardar_medic
             // 
-            this.button1.Location = new System.Drawing.Point(418, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 59);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar_medic.Location = new System.Drawing.Point(418, 510);
+            this.btnGuardar_medic.Name = "btnGuardar_medic";
+            this.btnGuardar_medic.Size = new System.Drawing.Size(88, 59);
+            this.btnGuardar_medic.TabIndex = 48;
+            this.btnGuardar_medic.Text = "Guardar";
+            this.btnGuardar_medic.UseVisualStyleBackColor = true;
             // 
             // FrmMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 591);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar_medic);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_medic);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtNumberDoc_m);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEspecialidad_medic);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCorreoM);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApellidoM);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNameM);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
@@ -235,20 +215,18 @@ namespace citalMedic_desk.vista
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_medic;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNumberDoc_m;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEspecialidad_medic;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCorreoM;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApellidoM;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNameM;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar_medic;
     }
 }

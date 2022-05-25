@@ -17,8 +17,11 @@ namespace citalMedic_desk.modelo
         public byte id { get; set; }
         public Nullable<System.DateTime> fecha_creacion { get; set; }
         public Nullable<System.DateTime> fecha_cita { get; set; }
-        public Nullable<System.DateTime> hora_cita { get; set; }
+        public Nullable<System.TimeSpan> hora_cita { get; set; }
         public Nullable<int> id_medico { get; set; }
         public Nullable<int> id_paciente { get; set; }
+    
+        public virtual medico medico { get; set; }
+        public virtual paciente paciente { get; set; }
     }
 }

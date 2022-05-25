@@ -1,54 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="citalMedicModelStoreContainer" CdmEntityContainer="citalMedicEntities">
-    <EntitySetMapping Name="cita">
-      <EntityTypeMapping TypeName="citalMedicModel.cita">
-        <MappingFragment StoreEntitySet="cita">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-          <ScalarProperty Name="fecha_cita" ColumnName="fecha_cita" />
-          <ScalarProperty Name="hora_cita" ColumnName="hora_cita" />
-          <ScalarProperty Name="id_medico" ColumnName="id_medico" />
-          <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="documento">
-      <EntityTypeMapping TypeName="citalMedicModel.documento">
-        <MappingFragment StoreEntitySet="documento">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="tipo" ColumnName="tipo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="medico">
-      <EntityTypeMapping TypeName="citalMedicModel.medico">
-        <MappingFragment StoreEntitySet="medico">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
-          <ScalarProperty Name="numero_doc" ColumnName="numero_doc" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
-          <ScalarProperty Name="especialidad" ColumnName="especialidad" />
-          <ScalarProperty Name="apellido" ColumnName="apellido" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="paciente">
-      <EntityTypeMapping TypeName="citalMedicModel.paciente">
-        <MappingFragment StoreEntitySet="paciente">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellido" ColumnName="apellido" />
-          <ScalarProperty Name="numero_doc" ColumnName="numero_doc" />
-          <ScalarProperty Name="fecha_natal" ColumnName="fecha_natal" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
-          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
-          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="citalMedicModelStoreContainer" CdmEntityContainer="citalMedicEntities1">
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="citalMedicModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="citalMedicModel.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="citalMedicModel.Store.sp_dropdiagram" />
@@ -71,7 +23,58 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertMedic" FunctionName="citalMedicModel.Store.sp_insertMedic" />
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="citalMedicModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="citalMedicModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_insertPaciente" FunctionName="citalMedicModel.Store.sp_insertPaciente" />
+    <EntitySetMapping Name="cita">
+      <EntityTypeMapping TypeName="citalMedicModel.cita">
+        <MappingFragment StoreEntitySet="cita">
+          <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
+          <ScalarProperty Name="id_medico" ColumnName="id_medico" />
+          <ScalarProperty Name="hora_cita" ColumnName="hora_cita" />
+          <ScalarProperty Name="fecha_cita" ColumnName="fecha_cita" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documento">
+      <EntityTypeMapping TypeName="citalMedicModel.documento">
+        <MappingFragment StoreEntitySet="documento">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medico">
+      <EntityTypeMapping TypeName="citalMedicModel.medico">
+        <MappingFragment StoreEntitySet="medico">
+          <ScalarProperty Name="especialidad" ColumnName="especialidad" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="numero_doc" ColumnName="numero_doc" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paciente">
+      <EntityTypeMapping TypeName="citalMedicModel.paciente">
+        <MappingFragment StoreEntitySet="paciente">
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fecha_natal" ColumnName="fecha_natal" />
+          <ScalarProperty Name="numero_doc" ColumnName="numero_doc" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertCita" FunctionName="citalMedicModel.Store.sp_insertCita" />
   </EntityContainerMapping>
 </Mapping>

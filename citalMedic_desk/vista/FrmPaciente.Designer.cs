@@ -31,22 +31,24 @@ namespace citalMedic_desk.vista
         {
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar_paci = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNameP = new System.Windows.Forms.TextBox();
+            this.txtApellidoP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCorreoP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDireccionP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCiudadP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNumberDoc_p = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_paci = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.dtpPaciente = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -68,14 +70,14 @@ namespace citalMedic_desk.vista
             this.label1.TabIndex = 15;
             this.label1.Text = "citalMedic";
             // 
-            // button1
+            // btnGuardar_paci
             // 
-            this.button1.Location = new System.Drawing.Point(422, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 59);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGuardar_paci.Location = new System.Drawing.Point(434, 540);
+            this.btnGuardar_paci.Name = "btnGuardar_paci";
+            this.btnGuardar_paci.Size = new System.Drawing.Size(88, 39);
+            this.btnGuardar_paci.TabIndex = 17;
+            this.btnGuardar_paci.Text = "Guardar";
+            this.btnGuardar_paci.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -86,19 +88,19 @@ namespace citalMedic_desk.vista
             this.label2.TabIndex = 18;
             this.label2.Text = "Nombre";
             // 
-            // textBox1
+            // txtNameP
             // 
-            this.textBox1.Location = new System.Drawing.Point(42, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 26);
-            this.textBox1.TabIndex = 19;
+            this.txtNameP.Location = new System.Drawing.Point(42, 154);
+            this.txtNameP.Name = "txtNameP";
+            this.txtNameP.Size = new System.Drawing.Size(269, 26);
+            this.txtNameP.TabIndex = 19;
             // 
-            // textBox2
+            // txtApellidoP
             // 
-            this.textBox2.Location = new System.Drawing.Point(42, 218);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 26);
-            this.textBox2.TabIndex = 21;
+            this.txtApellidoP.Location = new System.Drawing.Point(42, 218);
+            this.txtApellidoP.Name = "txtApellidoP";
+            this.txtApellidoP.Size = new System.Drawing.Size(269, 26);
+            this.txtApellidoP.TabIndex = 21;
             // 
             // label3
             // 
@@ -109,12 +111,12 @@ namespace citalMedic_desk.vista
             this.label3.TabIndex = 20;
             this.label3.Text = "Apellido";
             // 
-            // textBox3
+            // txtCorreoP
             // 
-            this.textBox3.Location = new System.Drawing.Point(42, 361);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 26);
-            this.textBox3.TabIndex = 23;
+            this.txtCorreoP.Location = new System.Drawing.Point(42, 361);
+            this.txtCorreoP.Name = "txtCorreoP";
+            this.txtCorreoP.Size = new System.Drawing.Size(269, 26);
+            this.txtCorreoP.TabIndex = 23;
             // 
             // label4
             // 
@@ -125,12 +127,12 @@ namespace citalMedic_desk.vista
             this.label4.TabIndex = 22;
             this.label4.Text = "Correo";
             // 
-            // textBox4
+            // txtDireccionP
             // 
-            this.textBox4.Location = new System.Drawing.Point(42, 432);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 26);
-            this.textBox4.TabIndex = 25;
+            this.txtDireccionP.Location = new System.Drawing.Point(42, 432);
+            this.txtDireccionP.Name = "txtDireccionP";
+            this.txtDireccionP.Size = new System.Drawing.Size(269, 26);
+            this.txtDireccionP.TabIndex = 25;
             // 
             // label5
             // 
@@ -141,12 +143,12 @@ namespace citalMedic_desk.vista
             this.label5.TabIndex = 24;
             this.label5.Text = "Dirección";
             // 
-            // textBox5
+            // txtCiudadP
             // 
-            this.textBox5.Location = new System.Drawing.Point(42, 504);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(269, 26);
-            this.textBox5.TabIndex = 27;
+            this.txtCiudadP.Location = new System.Drawing.Point(42, 504);
+            this.txtCiudadP.Name = "txtCiudadP";
+            this.txtCiudadP.Size = new System.Drawing.Size(269, 26);
+            this.txtCiudadP.TabIndex = 27;
             // 
             // label6
             // 
@@ -157,12 +159,12 @@ namespace citalMedic_desk.vista
             this.label6.TabIndex = 26;
             this.label6.Text = "Ciudad";
             // 
-            // textBox6
+            // txtNumberDoc_p
             // 
-            this.textBox6.Location = new System.Drawing.Point(42, 290);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(269, 26);
-            this.textBox6.TabIndex = 29;
+            this.txtNumberDoc_p.Location = new System.Drawing.Point(42, 290);
+            this.txtNumberDoc_p.Name = "txtNumberDoc_p";
+            this.txtNumberDoc_p.Size = new System.Drawing.Size(269, 26);
+            this.txtNumberDoc_p.TabIndex = 29;
             // 
             // label8
             // 
@@ -182,13 +184,13 @@ namespace citalMedic_desk.vista
             this.label9.TabIndex = 30;
             this.label9.Text = "Tipo";
             // 
-            // comboBox1
+            // cbx_paci
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(373, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 28);
-            this.comboBox1.TabIndex = 31;
+            this.cbx_paci.FormattingEnabled = true;
+            this.cbx_paci.Location = new System.Drawing.Point(373, 288);
+            this.cbx_paci.Name = "cbx_paci";
+            this.cbx_paci.Size = new System.Drawing.Size(125, 28);
+            this.cbx_paci.TabIndex = 31;
             // 
             // label10
             // 
@@ -199,27 +201,45 @@ namespace citalMedic_desk.vista
             this.label10.TabIndex = 32;
             this.label10.Text = "####";
             // 
+            // dtpPaciente
+            // 
+            this.dtpPaciente.Location = new System.Drawing.Point(339, 61);
+            this.dtpPaciente.Name = "dtpPaciente";
+            this.dtpPaciente.Size = new System.Drawing.Size(171, 26);
+            this.dtpPaciente.TabIndex = 33;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(335, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 20);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Nacimiento";
+            // 
             // FrmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 591);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dtpPaciente);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbx_paci);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtNumberDoc_p);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtCiudadP);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDireccionP);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCorreoP);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApellidoP);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNameP);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar_paci);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Name = "FrmPaciente";
@@ -234,21 +254,23 @@ namespace citalMedic_desk.vista
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar_paci;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNameP;
+        private System.Windows.Forms.TextBox txtApellidoP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCorreoP;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDireccionP;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCiudadP;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNumberDoc_p;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_paci;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpPaciente;
+        private System.Windows.Forms.Label label11;
     }
 }

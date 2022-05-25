@@ -1,118 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="citalMedicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="cita">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
-    <Property Name="fecha_cita" Type="DateTime" Precision="0" />
-    <Property Name="hora_cita" Type="DateTime" Precision="0" />
-    <Property Name="id_medico" Type="Int32" />
-    <Property Name="id_paciente" Type="Int32" />
-  </EntityType>
-  <EntityType Name="documento">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="medico">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="id_documento" Type="Byte" />
-    <Property Name="numero_doc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="especialidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="paciente">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="numero_doc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="fecha_natal" Type="DateTime" Precision="0" />
-    <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="direccion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="ciudad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="id_documento" Type="Byte" />
-  </EntityType>
-  <Association Name="FK__cita__id_medico__3E52440B">
-    <End Role="medico" Type="Self.medico" Multiplicity="0..1" />
-    <End Role="cita" Type="Self.cita" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="medico">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="cita">
-        <PropertyRef Name="id_medico" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__cita__id_pacient__3F466844">
-    <End Role="paciente" Type="Self.paciente" Multiplicity="0..1" />
-    <End Role="cita" Type="Self.cita" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="paciente">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="cita">
-        <PropertyRef Name="id_paciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__medico__apellido__38996AB5">
-    <End Role="documento" Type="Self.documento" Multiplicity="0..1" />
-    <End Role="medico" Type="Self.medico" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="documento">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="medico">
-        <PropertyRef Name="id_documento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__paciente__id_doc__3B75D760">
-    <End Role="documento" Type="Self.documento" Multiplicity="0..1" />
-    <End Role="paciente" Type="Self.paciente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="documento">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="paciente">
-        <PropertyRef Name="id_documento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="citalMedicEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="cita" EntityType="Self.cita" />
-    <EntitySet Name="documento" EntityType="Self.documento" />
-    <EntitySet Name="medico" EntityType="Self.medico" />
-    <EntitySet Name="paciente" EntityType="Self.paciente" />
-    <AssociationSet Name="FK__cita__id_medico__3E52440B" Association="Self.FK__cita__id_medico__3E52440B">
-      <End Role="medico" EntitySet="medico" />
-      <End Role="cita" EntitySet="cita" />
-    </AssociationSet>
-    <AssociationSet Name="FK__cita__id_pacient__3F466844" Association="Self.FK__cita__id_pacient__3F466844">
-      <End Role="paciente" EntitySet="paciente" />
-      <End Role="cita" EntitySet="cita" />
-    </AssociationSet>
-    <AssociationSet Name="FK__medico__apellido__38996AB5" Association="Self.FK__medico__apellido__38996AB5">
-      <End Role="documento" EntitySet="documento" />
-      <End Role="medico" EntitySet="medico" />
-    </AssociationSet>
-    <AssociationSet Name="FK__paciente__id_doc__3B75D760" Association="Self.FK__paciente__id_doc__3B75D760">
-      <End Role="documento" EntitySet="documento" />
-      <End Role="paciente" EntitySet="paciente" />
-    </AssociationSet>
+  <EntityContainer Name="citalMedicEntities1" annotation:LazyLoadingEnabled="true">
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -137,12 +25,57 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_insertMedic">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="id_documento" Mode="In" Type="Byte" />
+      <Parameter Name="numero_doc" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="especialidad" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="sp_renamediagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_insertPaciente">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="id_documento" Mode="In" Type="Byte" />
+      <Parameter Name="numero_doc" Mode="In" Type="String" />
+      <Parameter Name="fecha_natal" Mode="In" Type="DateTime" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="direccion" Mode="In" Type="String" />
+      <Parameter Name="ciudad" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="cita" EntityType="citalMedicModel.cita" />
+    <EntitySet Name="documento" EntityType="citalMedicModel.documento" />
+    <EntitySet Name="medico" EntityType="citalMedicModel.medico" />
+    <EntitySet Name="paciente" EntityType="citalMedicModel.paciente" />
+    <AssociationSet Name="FK__cita__id_medico__123EB7A3" Association="citalMedicModel.FK__cita__id_medico__123EB7A3">
+      <End Role="medico" EntitySet="medico" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cita__id_pacient__1332DBDC" Association="citalMedicModel.FK__cita__id_pacient__1332DBDC">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="cita" EntitySet="cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__medico__id_docum__08B54D69" Association="citalMedicModel.FK__medico__id_docum__08B54D69">
+      <End Role="documento" EntitySet="documento" />
+      <End Role="medico" EntitySet="medico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__paciente__id_doc__0B91BA14" Association="citalMedicModel.FK__paciente__id_doc__0B91BA14">
+      <End Role="documento" EntitySet="documento" />
+      <End Role="paciente" EntitySet="paciente" />
+    </AssociationSet>
+    <FunctionImport Name="sp_insertCita">
+      <Parameter Name="fecha_creacion" Mode="In" Type="DateTime" />
+      <Parameter Name="fecha_cita" Mode="In" Type="DateTime" />
+      <Parameter Name="hora_cita" Mode="In" Type="Time" />
+      <Parameter Name="id_medico" Mode="In" Type="Int32" />
+      <Parameter Name="id_paciente" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -155,4 +88,104 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+    <Property Name="fecha_cita" Type="DateTime" Precision="0" />
+    <Property Name="hora_cita" Type="Time" Precision="7" />
+    <Property Name="id_medico" Type="Int32" />
+    <Property Name="id_paciente" Type="Int32" />
+    <NavigationProperty Name="medico" Relationship="citalMedicModel.FK__cita__id_medico__123EB7A3" FromRole="cita" ToRole="medico" />
+    <NavigationProperty Name="paciente" Relationship="citalMedicModel.FK__cita__id_pacient__1332DBDC" FromRole="cita" ToRole="paciente" />
+  </EntityType>
+  <EntityType Name="documento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="medico" Relationship="citalMedicModel.FK__medico__id_docum__08B54D69" FromRole="documento" ToRole="medico" />
+    <NavigationProperty Name="paciente" Relationship="citalMedicModel.FK__paciente__id_doc__0B91BA14" FromRole="documento" ToRole="paciente" />
+  </EntityType>
+  <EntityType Name="medico">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id_documento" Type="Byte" />
+    <Property Name="numero_doc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="especialidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cita" Relationship="citalMedicModel.FK__cita__id_medico__123EB7A3" FromRole="medico" ToRole="cita" />
+    <NavigationProperty Name="documento" Relationship="citalMedicModel.FK__medico__id_docum__08B54D69" FromRole="medico" ToRole="documento" />
+  </EntityType>
+  <EntityType Name="paciente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id_documento" Type="Byte" />
+    <Property Name="numero_doc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_natal" Type="DateTime" Precision="0" />
+    <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ciudad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cita" Relationship="citalMedicModel.FK__cita__id_pacient__1332DBDC" FromRole="paciente" ToRole="cita" />
+    <NavigationProperty Name="documento" Relationship="citalMedicModel.FK__paciente__id_doc__0B91BA14" FromRole="paciente" ToRole="documento" />
+  </EntityType>
+  <Association Name="FK__cita__id_medico__123EB7A3">
+    <End Type="citalMedicModel.medico" Role="medico" Multiplicity="0..1" />
+    <End Type="citalMedicModel.cita" Role="cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medico">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="id_medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cita__id_pacient__1332DBDC">
+    <End Type="citalMedicModel.paciente" Role="paciente" Multiplicity="0..1" />
+    <End Type="citalMedicModel.cita" Role="cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="cita">
+        <PropertyRef Name="id_paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__medico__id_docum__08B54D69">
+    <End Type="citalMedicModel.documento" Role="documento" Multiplicity="0..1" />
+    <End Type="citalMedicModel.medico" Role="medico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="medico">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__paciente__id_doc__0B91BA14">
+    <End Type="citalMedicModel.documento" Role="documento" Multiplicity="0..1" />
+    <End Type="citalMedicModel.paciente" Role="paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="paciente">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

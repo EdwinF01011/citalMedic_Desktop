@@ -15,10 +15,10 @@ namespace citalMedic_desk.modelo
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class citalMedicEntities : DbContext
+    public partial class citalMedicEntities1 : DbContext
     {
-        public citalMedicEntities()
-            : base("name=citalMedicEntities")
+        public citalMedicEntities1()
+            : base("name=citalMedicEntities1")
         {
         }
     
@@ -113,6 +113,35 @@ namespace citalMedic_desk.modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
+        public virtual int sp_insertMedic(string nombre, string apellido, Nullable<byte> id_documento, string numero_doc, string correo, string especialidad)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("apellido", apellido) :
+                new ObjectParameter("apellido", typeof(string));
+    
+            var id_documentoParameter = id_documento.HasValue ?
+                new ObjectParameter("id_documento", id_documento) :
+                new ObjectParameter("id_documento", typeof(byte));
+    
+            var numero_docParameter = numero_doc != null ?
+                new ObjectParameter("numero_doc", numero_doc) :
+                new ObjectParameter("numero_doc", typeof(string));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("correo", correo) :
+                new ObjectParameter("correo", typeof(string));
+    
+            var especialidadParameter = especialidad != null ?
+                new ObjectParameter("especialidad", especialidad) :
+                new ObjectParameter("especialidad", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertMedic", nombreParameter, apellidoParameter, id_documentoParameter, numero_docParameter, correoParameter, especialidadParameter);
+        }
+    
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
         {
             var diagramnameParameter = diagramname != null ?
@@ -133,6 +162,68 @@ namespace citalMedic_desk.modelo
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual int sp_insertPaciente(string nombre, string apellido, Nullable<byte> id_documento, string numero_doc, Nullable<System.DateTime> fecha_natal, string correo, string direccion, string ciudad)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("apellido", apellido) :
+                new ObjectParameter("apellido", typeof(string));
+    
+            var id_documentoParameter = id_documento.HasValue ?
+                new ObjectParameter("id_documento", id_documento) :
+                new ObjectParameter("id_documento", typeof(byte));
+    
+            var numero_docParameter = numero_doc != null ?
+                new ObjectParameter("numero_doc", numero_doc) :
+                new ObjectParameter("numero_doc", typeof(string));
+    
+            var fecha_natalParameter = fecha_natal.HasValue ?
+                new ObjectParameter("fecha_natal", fecha_natal) :
+                new ObjectParameter("fecha_natal", typeof(System.DateTime));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("correo", correo) :
+                new ObjectParameter("correo", typeof(string));
+    
+            var direccionParameter = direccion != null ?
+                new ObjectParameter("direccion", direccion) :
+                new ObjectParameter("direccion", typeof(string));
+    
+            var ciudadParameter = ciudad != null ?
+                new ObjectParameter("ciudad", ciudad) :
+                new ObjectParameter("ciudad", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertPaciente", nombreParameter, apellidoParameter, id_documentoParameter, numero_docParameter, fecha_natalParameter, correoParameter, direccionParameter, ciudadParameter);
+        }
+    
+        public virtual int sp_insertCita(Nullable<System.DateTime> fecha_creacion, Nullable<System.DateTime> fecha_cita, Nullable<System.TimeSpan> hora_cita, Nullable<int> id_medico, Nullable<int> id_paciente)
+        {
+            var fecha_creacionParameter = fecha_creacion.HasValue ?
+                new ObjectParameter("fecha_creacion", fecha_creacion) :
+                new ObjectParameter("fecha_creacion", typeof(System.DateTime));
+    
+            var fecha_citaParameter = fecha_cita.HasValue ?
+                new ObjectParameter("fecha_cita", fecha_cita) :
+                new ObjectParameter("fecha_cita", typeof(System.DateTime));
+    
+            var hora_citaParameter = hora_cita.HasValue ?
+                new ObjectParameter("hora_cita", hora_cita) :
+                new ObjectParameter("hora_cita", typeof(System.TimeSpan));
+    
+            var id_medicoParameter = id_medico.HasValue ?
+                new ObjectParameter("id_medico", id_medico) :
+                new ObjectParameter("id_medico", typeof(int));
+    
+            var id_pacienteParameter = id_paciente.HasValue ?
+                new ObjectParameter("id_paciente", id_paciente) :
+                new ObjectParameter("id_paciente", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertCita", fecha_creacionParameter, fecha_citaParameter, hora_citaParameter, id_medicoParameter, id_pacienteParameter);
         }
     }
 }

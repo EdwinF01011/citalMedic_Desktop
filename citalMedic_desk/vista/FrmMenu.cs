@@ -26,8 +26,12 @@ namespace citalMedic_desk.vista
         private void button1_Click(object sender, EventArgs e)
         {
             ClsMenu objMenu = new ClsMenu();
-            string tt=objMenu.prueba(true);
-            lblText.Text = tt;
+            //string tt = objMenu.prueba(true);
+            //lblText.Text = tt;
+
+            dataGridView1.DataSource = objMenu.getDoc();
+
+
 
         }
 

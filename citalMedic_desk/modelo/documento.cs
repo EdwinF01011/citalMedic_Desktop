@@ -14,7 +14,19 @@ namespace citalMedic_desk.modelo
     
     public partial class documento
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public documento()
+        {
+            this.medico = new HashSet<medico>();
+            this.paciente = new HashSet<paciente>();
+        }
+    
         public byte id { get; set; }
         public string tipo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<medico> medico { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<paciente> paciente { get; set; }
     }
 }
