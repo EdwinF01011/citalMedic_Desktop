@@ -31,7 +31,7 @@ namespace citalMedic_desk.vista
         {
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTipoDoc = new System.Windows.Forms.Label();
             this.cbx_medic = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNumberDoc_m = new System.Windows.Forms.TextBox();
@@ -66,14 +66,14 @@ namespace citalMedic_desk.vista
             this.label1.TabIndex = 15;
             this.label1.Text = "citalMedic";
             // 
-            // label10
+            // lblTipoDoc
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(461, 274);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 20);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "####";
+            this.lblTipoDoc.AutoSize = true;
+            this.lblTipoDoc.Location = new System.Drawing.Point(461, 274);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(45, 20);
+            this.lblTipoDoc.TabIndex = 47;
+            this.lblTipoDoc.Text = "####";
             // 
             // cbx_medic
             // 
@@ -82,6 +82,7 @@ namespace citalMedic_desk.vista
             this.cbx_medic.Name = "cbx_medic";
             this.cbx_medic.Size = new System.Drawing.Size(125, 28);
             this.cbx_medic.TabIndex = 46;
+            this.cbx_medic.SelectedValueChanged += new System.EventHandler(this.cbx_medic_SelectedValueChanged);
             // 
             // label9
             // 
@@ -180,6 +181,7 @@ namespace citalMedic_desk.vista
             this.btnGuardar_medic.TabIndex = 48;
             this.btnGuardar_medic.Text = "Guardar";
             this.btnGuardar_medic.UseVisualStyleBackColor = true;
+            this.btnGuardar_medic.Click += new System.EventHandler(this.btnGuardar_medic_Click);
             // 
             // FrmMedico
             // 
@@ -187,7 +189,7 @@ namespace citalMedic_desk.vista
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 591);
             this.Controls.Add(this.btnGuardar_medic);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblTipoDoc);
             this.Controls.Add(this.cbx_medic);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNumberDoc_m);
@@ -205,6 +207,7 @@ namespace citalMedic_desk.vista
             this.Name = "FrmMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMedico";
+            this.Load += new System.EventHandler(this.FrmMedico_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +217,7 @@ namespace citalMedic_desk.vista
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.ComboBox cbx_medic;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNumberDoc_m;

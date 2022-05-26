@@ -28,12 +28,10 @@ namespace citalMedic_desk.controlador
                 //bd.sp_insertPaciente("Knox Vasquez", "Imani Cook", 1, "1007116776", fec, "enim.non@aol.org", "P.O. Box 995, 7980 Cursus. Av.", "Termini Imerese");
 
                 //cita
-                DateTime fecCreation = Convert.ToDateTime("05/11/2022");
-                DateTime fecCita = Convert.ToDateTime("05/02/2023");
-                TimeSpan horaCita = TimeSpan.Parse("19:54:15");
-
-
-                bd.sp_insertCita(fecCreation, fecCita, horaCita, 2, 5);
+                //DateTime fecCreation = Convert.ToDateTime("05/11/2022");
+                //DateTime fecCita = Convert.ToDateTime("05/02/2023");
+                //TimeSpan horaCita = TimeSpan.Parse("19:54:15");
+                //bd.sp_insertCita(fecCreation, fecCita, horaCita, 2, 5);
 
                 return doc; 
 

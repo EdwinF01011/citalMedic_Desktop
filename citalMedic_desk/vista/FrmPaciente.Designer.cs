@@ -46,7 +46,7 @@ namespace citalMedic_desk.vista
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbx_paci = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblTipo_doc = new System.Windows.Forms.Label();
             this.dtpPaciente = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -78,6 +78,7 @@ namespace citalMedic_desk.vista
             this.btnGuardar_paci.TabIndex = 17;
             this.btnGuardar_paci.Text = "Guardar";
             this.btnGuardar_paci.UseVisualStyleBackColor = true;
+            this.btnGuardar_paci.Click += new System.EventHandler(this.btnGuardar_paci_Click);
             // 
             // label2
             // 
@@ -191,15 +192,16 @@ namespace citalMedic_desk.vista
             this.cbx_paci.Name = "cbx_paci";
             this.cbx_paci.Size = new System.Drawing.Size(125, 28);
             this.cbx_paci.TabIndex = 31;
+            this.cbx_paci.SelectedValueChanged += new System.EventHandler(this.cbx_paci_SelectedValueChanged);
             // 
-            // label10
+            // lblTipo_doc
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(459, 267);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 20);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "####";
+            this.lblTipo_doc.AutoSize = true;
+            this.lblTipo_doc.Location = new System.Drawing.Point(459, 267);
+            this.lblTipo_doc.Name = "lblTipo_doc";
+            this.lblTipo_doc.Size = new System.Drawing.Size(45, 20);
+            this.lblTipo_doc.TabIndex = 32;
+            this.lblTipo_doc.Text = "####";
             // 
             // dtpPaciente
             // 
@@ -224,7 +226,7 @@ namespace citalMedic_desk.vista
             this.ClientSize = new System.Drawing.Size(534, 591);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dtpPaciente);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblTipo_doc);
             this.Controls.Add(this.cbx_paci);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNumberDoc_p);
@@ -245,6 +247,7 @@ namespace citalMedic_desk.vista
             this.Name = "FrmPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPaciente";
+            this.Load += new System.EventHandler(this.FrmPaciente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +272,7 @@ namespace citalMedic_desk.vista
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbx_paci;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTipo_doc;
         private System.Windows.Forms.DateTimePicker dtpPaciente;
         private System.Windows.Forms.Label label11;
     }

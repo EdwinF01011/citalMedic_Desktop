@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controlador\ClsCleanTxt.cs" />
+    <Compile Include="controlador\ClsFormulario.cs" />
     <Compile Include="controlador\ClsMenu.cs" />
     <Compile Include="modelo\cita.cs">
       <DependentUpon>Model1.tt</DependentUpon>
