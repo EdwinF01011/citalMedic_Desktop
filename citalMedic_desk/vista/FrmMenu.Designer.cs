@@ -36,14 +36,15 @@ namespace citalMedic_desk.vista
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboxPaciente = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblPaciente = new System.Windows.Forms.Label();
+            this.LblMedico = new System.Windows.Forms.Label();
+            this.dataTPcita = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnPaciente = new System.Windows.Forms.Button();
             this.btnMedico = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnReloadDgv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +61,11 @@ namespace citalMedic_desk.vista
             // lblText
             // 
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(835, 60);
+            this.lblText.Location = new System.Drawing.Point(757, 71);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(54, 20);
+            this.lblText.Size = new System.Drawing.Size(63, 20);
             this.lblText.TabIndex = 1;
-            this.lblText.Text = "lblText";
+            this.lblText.Text = "######";
             // 
             // label1
             // 
@@ -83,6 +84,7 @@ namespace citalMedic_desk.vista
             this.cboxMedico.Name = "cboxMedico";
             this.cboxMedico.Size = new System.Drawing.Size(188, 28);
             this.cboxMedico.TabIndex = 3;
+            this.cboxMedico.SelectedValueChanged += new System.EventHandler(this.cboxMedico_SelectedValueChanged);
             // 
             // label2
             // 
@@ -109,36 +111,39 @@ namespace citalMedic_desk.vista
             this.cboxPaciente.Name = "cboxPaciente";
             this.cboxPaciente.Size = new System.Drawing.Size(188, 28);
             this.cboxPaciente.TabIndex = 5;
+            this.cboxPaciente.SelectedValueChanged += new System.EventHandler(this.cboxPaciente_SelectedValueChanged);
             // 
-            // label4
+            // lblPaciente
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(104, 226);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "######";
+            this.lblPaciente.AutoSize = true;
+            this.lblPaciente.Location = new System.Drawing.Point(104, 226);
+            this.lblPaciente.Name = "lblPaciente";
+            this.lblPaciente.Size = new System.Drawing.Size(63, 20);
+            this.lblPaciente.TabIndex = 7;
+            this.lblPaciente.Text = "######";
             // 
-            // label5
+            // LblMedico
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(104, 291);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "######";
+            this.LblMedico.AutoSize = true;
+            this.LblMedico.Location = new System.Drawing.Point(104, 291);
+            this.LblMedico.Name = "LblMedico";
+            this.LblMedico.Size = new System.Drawing.Size(63, 20);
+            this.LblMedico.TabIndex = 8;
+            this.LblMedico.Text = "######";
             // 
-            // dateTimePicker1
+            // dataTPcita
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(565, 117);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(324, 26);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dataTPcita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataTPcita.Location = new System.Drawing.Point(565, 102);
+            this.dataTPcita.Name = "dataTPcita";
+            this.dataTPcita.Size = new System.Drawing.Size(324, 26);
+            this.dataTPcita.TabIndex = 9;
+            this.dataTPcita.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(561, 86);
+            this.label6.Location = new System.Drawing.Point(561, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 20);
             this.label6.TabIndex = 10;
@@ -183,19 +188,30 @@ namespace citalMedic_desk.vista
             this.label7.TabIndex = 14;
             this.label7.Text = "Agenda de citas";
             // 
+            // btnReloadDgv
+            // 
+            this.btnReloadDgv.Location = new System.Drawing.Point(814, 641);
+            this.btnReloadDgv.Name = "btnReloadDgv";
+            this.btnReloadDgv.Size = new System.Drawing.Size(75, 44);
+            this.btnReloadDgv.TabIndex = 18;
+            this.btnReloadDgv.Text = "Reload";
+            this.btnReloadDgv.UseVisualStyleBackColor = true;
+            this.btnReloadDgv.Click += new System.EventHandler(this.btnReloadDgv_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 725);
+            this.Controls.Add(this.btnReloadDgv);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnMedico);
             this.Controls.Add(this.btnPaciente);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataTPcita);
+            this.Controls.Add(this.LblMedico);
+            this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboxPaciente);
             this.Controls.Add(this.label2);
@@ -222,13 +238,14 @@ namespace citalMedic_desk.vista
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboxPaciente;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblPaciente;
+        private System.Windows.Forms.Label LblMedico;
+        private System.Windows.Forms.DateTimePicker dataTPcita;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnPaciente;
         private System.Windows.Forms.Button btnMedico;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnReloadDgv;
     }
 }

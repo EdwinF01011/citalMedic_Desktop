@@ -225,5 +225,10 @@ namespace citalMedic_desk.modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insertCita", fecha_creacionParameter, fecha_citaParameter, hora_citaParameter, id_medicoParameter, id_pacienteParameter);
         }
+    
+        public virtual ObjectResult<sp_consultaCita_Result> sp_consultaCita()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_consultaCita_Result>("sp_consultaCita");
+        }
     }
 }

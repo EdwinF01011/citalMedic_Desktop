@@ -20,8 +20,5 @@ namespace citalMedic_desk.modelo
         public Nullable<System.TimeSpan> hora_cita { get; set; }
         public Nullable<int> id_medico { get; set; }
         public Nullable<int> id_paciente { get; set; }
-    
-        public virtual medico medico { get; set; }
-        public virtual paciente paciente { get; set; }
     }
 }

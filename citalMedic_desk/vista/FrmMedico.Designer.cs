@@ -96,6 +96,7 @@ namespace citalMedic_desk.vista
             // txtNumberDoc_m
             // 
             this.txtNumberDoc_m.Location = new System.Drawing.Point(44, 297);
+            this.txtNumberDoc_m.MaxLength = 10;
             this.txtNumberDoc_m.Name = "txtNumberDoc_m";
             this.txtNumberDoc_m.Size = new System.Drawing.Size(269, 26);
             this.txtNumberDoc_m.TabIndex = 44;
@@ -112,6 +113,7 @@ namespace citalMedic_desk.vista
             // txtEspecialidad_medic
             // 
             this.txtEspecialidad_medic.Location = new System.Drawing.Point(44, 439);
+            this.txtEspecialidad_medic.MaxLength = 20;
             this.txtEspecialidad_medic.Name = "txtEspecialidad_medic";
             this.txtEspecialidad_medic.Size = new System.Drawing.Size(269, 26);
             this.txtEspecialidad_medic.TabIndex = 40;
@@ -128,6 +130,7 @@ namespace citalMedic_desk.vista
             // txtCorreoM
             // 
             this.txtCorreoM.Location = new System.Drawing.Point(44, 368);
+            this.txtCorreoM.MaxLength = 40;
             this.txtCorreoM.Name = "txtCorreoM";
             this.txtCorreoM.Size = new System.Drawing.Size(269, 26);
             this.txtCorreoM.TabIndex = 38;
@@ -144,6 +147,7 @@ namespace citalMedic_desk.vista
             // txtApellidoM
             // 
             this.txtApellidoM.Location = new System.Drawing.Point(44, 225);
+            this.txtApellidoM.MaxLength = 20;
             this.txtApellidoM.Name = "txtApellidoM";
             this.txtApellidoM.Size = new System.Drawing.Size(269, 26);
             this.txtApellidoM.TabIndex = 36;
@@ -160,6 +164,7 @@ namespace citalMedic_desk.vista
             // txtNameM
             // 
             this.txtNameM.Location = new System.Drawing.Point(44, 161);
+            this.txtNameM.MaxLength = 20;
             this.txtNameM.Name = "txtNameM";
             this.txtNameM.Size = new System.Drawing.Size(269, 26);
             this.txtNameM.TabIndex = 34;

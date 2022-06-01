@@ -76,5 +76,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_insertCita" FunctionName="citalMedicModel.Store.sp_insertCita" />
+    <FunctionImportMapping FunctionImportName="sp_consultaCita" FunctionName="citalMedicModel.Store.sp_consultaCita">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="citalMedicModel.sp_consultaCita_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fecha_cita" ColumnName="fecha cita" />
+          <ScalarProperty Name="Medico" ColumnName="Medico" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Cédula" ColumnName="Cédula" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

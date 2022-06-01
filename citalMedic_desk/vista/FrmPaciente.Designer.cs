@@ -92,6 +92,7 @@ namespace citalMedic_desk.vista
             // txtNameP
             // 
             this.txtNameP.Location = new System.Drawing.Point(42, 154);
+            this.txtNameP.MaxLength = 20;
             this.txtNameP.Name = "txtNameP";
             this.txtNameP.Size = new System.Drawing.Size(269, 26);
             this.txtNameP.TabIndex = 19;
@@ -99,6 +100,7 @@ namespace citalMedic_desk.vista
             // txtApellidoP
             // 
             this.txtApellidoP.Location = new System.Drawing.Point(42, 218);
+            this.txtApellidoP.MaxLength = 20;
             this.txtApellidoP.Name = "txtApellidoP";
             this.txtApellidoP.Size = new System.Drawing.Size(269, 26);
             this.txtApellidoP.TabIndex = 21;
@@ -115,9 +117,10 @@ namespace citalMedic_desk.vista
             // txtCorreoP
             // 
             this.txtCorreoP.Location = new System.Drawing.Point(42, 361);
+            this.txtCorreoP.MaxLength = 40;
             this.txtCorreoP.Name = "txtCorreoP";
             this.txtCorreoP.Size = new System.Drawing.Size(269, 26);
-            this.txtCorreoP.TabIndex = 23;
+            this.txtCorreoP.TabIndex = 30;
             // 
             // label4
             // 
@@ -131,6 +134,7 @@ namespace citalMedic_desk.vista
             // txtDireccionP
             // 
             this.txtDireccionP.Location = new System.Drawing.Point(42, 432);
+            this.txtDireccionP.MaxLength = 40;
             this.txtDireccionP.Name = "txtDireccionP";
             this.txtDireccionP.Size = new System.Drawing.Size(269, 26);
             this.txtDireccionP.TabIndex = 25;
@@ -147,6 +151,7 @@ namespace citalMedic_desk.vista
             // txtCiudadP
             // 
             this.txtCiudadP.Location = new System.Drawing.Point(42, 504);
+            this.txtCiudadP.MaxLength = 20;
             this.txtCiudadP.Name = "txtCiudadP";
             this.txtCiudadP.Size = new System.Drawing.Size(269, 26);
             this.txtCiudadP.TabIndex = 27;
@@ -163,6 +168,7 @@ namespace citalMedic_desk.vista
             // txtNumberDoc_p
             // 
             this.txtNumberDoc_p.Location = new System.Drawing.Point(42, 290);
+            this.txtNumberDoc_p.MaxLength = 10;
             this.txtNumberDoc_p.Name = "txtNumberDoc_p";
             this.txtNumberDoc_p.Size = new System.Drawing.Size(269, 26);
             this.txtNumberDoc_p.TabIndex = 29;
@@ -205,15 +211,16 @@ namespace citalMedic_desk.vista
             // 
             // dtpPaciente
             // 
-            this.dtpPaciente.Location = new System.Drawing.Point(339, 61);
+            this.dtpPaciente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpPaciente.Location = new System.Drawing.Point(319, 55);
             this.dtpPaciente.Name = "dtpPaciente";
-            this.dtpPaciente.Size = new System.Drawing.Size(171, 26);
+            this.dtpPaciente.Size = new System.Drawing.Size(179, 26);
             this.dtpPaciente.TabIndex = 33;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(335, 35);
+            this.label11.Location = new System.Drawing.Point(315, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 20);
             this.label11.TabIndex = 34;

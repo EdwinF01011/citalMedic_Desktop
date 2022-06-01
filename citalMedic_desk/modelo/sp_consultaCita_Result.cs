@@ -10,11 +10,14 @@
 namespace citalMedic_desk.modelo
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class documento
+    public partial class sp_consultaCita_Result
     {
         public byte id { get; set; }
-        public string tipo { get; set; }
+        public Nullable<System.DateTime> fecha_cita { get; set; }
+        public string Medico { get; set; }
+        public string Paciente { get; set; }
+        public string Cédula { get; set; }
+        public string correo { get; set; }
     }
 }

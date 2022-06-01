@@ -76,6 +76,7 @@
       <Parameter Name="id_medico" Mode="In" Type="Int32" />
       <Parameter Name="id_paciente" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_consultaCita" ReturnType="Collection(citalMedicModel.sp_consultaCita_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -98,8 +99,6 @@
     <Property Name="hora_cita" Type="Time" Precision="7" />
     <Property Name="id_medico" Type="Int32" />
     <Property Name="id_paciente" Type="Int32" />
-    <NavigationProperty Name="medico" Relationship="citalMedicModel.FK__cita__id_medico__123EB7A3" FromRole="cita" ToRole="medico" />
-    <NavigationProperty Name="paciente" Relationship="citalMedicModel.FK__cita__id_pacient__1332DBDC" FromRole="cita" ToRole="paciente" />
   </EntityType>
   <EntityType Name="documento">
     <Key>
@@ -107,8 +106,6 @@
     </Key>
     <Property Name="id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="medico" Relationship="citalMedicModel.FK__medico__id_docum__08B54D69" FromRole="documento" ToRole="medico" />
-    <NavigationProperty Name="paciente" Relationship="citalMedicModel.FK__paciente__id_doc__0B91BA14" FromRole="documento" ToRole="paciente" />
   </EntityType>
   <EntityType Name="medico">
     <Key>
@@ -121,8 +118,6 @@
     <Property Name="numero_doc" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="especialidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="cita" Relationship="citalMedicModel.FK__cita__id_medico__123EB7A3" FromRole="medico" ToRole="cita" />
-    <NavigationProperty Name="documento" Relationship="citalMedicModel.FK__medico__id_docum__08B54D69" FromRole="medico" ToRole="documento" />
   </EntityType>
   <EntityType Name="paciente">
     <Key>
@@ -137,8 +132,6 @@
     <Property Name="correo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="direccion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="ciudad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="cita" Relationship="citalMedicModel.FK__cita__id_pacient__1332DBDC" FromRole="paciente" ToRole="cita" />
-    <NavigationProperty Name="documento" Relationship="citalMedicModel.FK__paciente__id_doc__0B91BA14" FromRole="paciente" ToRole="documento" />
   </EntityType>
   <Association Name="FK__cita__id_medico__123EB7A3">
     <End Type="citalMedicModel.medico" Role="medico" Multiplicity="0..1" />
@@ -188,4 +181,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="sp_consultaCita_Result">
+    <Property Type="Byte" Name="id" Nullable="false" />
+    <Property Type="DateTime" Name="fecha_cita" Nullable="true" />
+    <Property Type="String" Name="Medico" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Paciente" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Cédula" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="correo" Nullable="true" MaxLength="40" />
+  </ComplexType>
 </Schema>
